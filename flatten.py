@@ -1,8 +1,10 @@
 def flatten(array):
-  flattened = []
-  for el in array:
-    if type(el) is list:
-      flatten(el)
+  new_arr = []
+
+  for i in array:
+    if type(i) is list:
+      new_arr += flatten(i)
     else:
-      flattened += el
-  return flattened
+      new_arr.append(i)
+      
+  return new_arr
